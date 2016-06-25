@@ -1,8 +1,27 @@
 import { Component } from '@angular/core';
+import { Interview } from "../interviewDetails/interview.component";
+import {ControlGroup, FormBuilder} from "@angular/common";
 
 @Component({
     selector: 'newinterviewcreation',
-    template: '<div class="col-md-4 col-md-offset-5"><strong>Create new candidate and Interview</strong></div>'
+    template: require('./newInterview.component.html')
 })
 
-export class NewInterview{}
+export class NewInterview{
+    private interview: Interview;
+    private interviewForm: ControlGroup;
+    constructor(fb: FormBuilder) {
+        this.interviewForm = fb.group({
+            interview: fb.group({
+                candidate: fb.group({
+                    firstName: [''],
+                    lastName: ['']
+                })
+            })
+        })
+    }
+
+    createCandidate() {
+        console.log(this.interviewForm.value)
+    }
+}

@@ -1,0 +1,22 @@
+<div class="col-md-4 col-md-offset-5"><strong>Create new candidate and Interview</strong></div>
+<div class="container">
+    <form [ngFormModel]="interviewForm" (submit)="createCandidate()">
+        <div ngControlGroup="interview">
+            <div ngControlGroup="candidate">
+                <div class="row">
+                    <span class="col-md-5">Candidate First Name</span>
+                    <div class="col-md-6"><input name="candidateFirstName" class="form-group" ngControl="firstName">
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="col-md-5">Candidate Last Name</span>
+                    <div class="col-md-6"><input name="candidateLastName" class="form-group"
+                                                 ngControl="lastName"></div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-primary col-md-offset-4 col-md-4">Create</button>
+            </div>
+        </div>
+    </form>
+</div>
