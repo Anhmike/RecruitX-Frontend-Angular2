@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-    template: '<div>Create new Interview</div>'
+    selector: 'newinterviewcreation',
+    template: '<div class="col-md-4 col-md-offset-5"><strong>Create new candidate and Interview</strong></div>'
 })
 
 export class NewInterview{}

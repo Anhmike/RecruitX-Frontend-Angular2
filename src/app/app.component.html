@@ -1,7 +1,11 @@
-<div>
+<div class="container">
     <div class="row">
-        <div class="col-md-2 col-md-offset-5"><h4>Welcome to RecruitX</h4></div>
+        <div class="col-md-4 col-md-offset-5"><h3>Welcome to RecruitX</h3></div>
+        <div class="col-md-1">
+            <button class="button btn-primary" (click)="showCreateNewCandidate()">Create New Candidate</button>
+        </div>
     </div>
+    <div class="row" *ngIf="createCandidate"><newinterviewcreation></newinterviewcreation></div>
     <tabset [justified]="true">
         <tab heading="Interviews"><interviews></interviews></tab>
         <tab heading="My Interviews"><myinterviews></myinterviews></tab>
