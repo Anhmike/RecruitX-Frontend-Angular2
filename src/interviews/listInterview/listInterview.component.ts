@@ -3,8 +3,7 @@ import { Interview } from "../interviewDetails/interview.component";
 
 @Component({
     selector: 'interviewList',
-    template: `<div>Interview List</div>
-               <div *ngFor="let interview of interviewList">
+    template: `<div *ngFor="let interview of interviewList">
                <interview [interview]="interview"></interview>
                </div> `,
     directives: [Interview]

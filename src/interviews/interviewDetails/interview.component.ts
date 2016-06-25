@@ -1,16 +1,19 @@
-import {Component, Input, OnInit} from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { Candidate } from "../../candidate/candidate.component";
 
 @Component({
-       selector: 'interview',
-        template: `<h4>Name</h4>
-                    <div>{{interview.id}}</div>
-                    <button (click)="show(interview)"></button>`
+        selector: 'interview',
+        directives: [Candidate],
+        template: `<div class="container">
+                   <candidate [candidate]="interview.candidate"></candidate>
+                   <div class="row">
+                        <div class="col-md-4"><strong>Start time</strong></div>
+                        <div class="col-md-6"> {{interview.start_time}}</div>
+                   </div>
+                   </div>
+                   `
 })
 
 export class Interview {
     @Input('interview') interview: Interview;
-
-    show(interview: any) {
-        console.log(interview)
-    }
 }
