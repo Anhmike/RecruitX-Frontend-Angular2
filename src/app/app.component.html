@@ -1,4 +1,9 @@
 <div>
-    <router-outlet></router-outlet>
-    <a [routerLink]="['/interview/create']"class="btn">Create</a>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5"><h4>Welcome to RecruitX</h4></div>
+    </div>
+    <tabset [justified]="true">
+        <tab heading="Interviews"></tab>
+        <tab heading="My Interviews"></tab>
+    </tabset>
 </div>
