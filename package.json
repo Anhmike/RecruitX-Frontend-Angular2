@@ -1,7 +1,7 @@
 {
-  "name": "pleiade2-tendering",
+  "name": "Recruitx-Frontend-Angular2",
   "version": "1.0.0",
-  "description": "Pleiade2 - Tendering Application",
+  "description": "Recruitx-Frontend-Angular2",
   "scripts": {
     "rimraf": "rimraf",
     "tslint": "tslint",
@@ -48,6 +48,7 @@
     "@angular/platform-browser-dynamic": "^2.0.0-rc.2",
     "@angular/router": "^2.0.0-rc.2",
     "@angular/router-deprecated": "2.0.0-rc.2",
+    "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
     "ng2-bootstrap": "^1.0.17",
     "ng2-translate": "^2.2.0",
