@@ -2,20 +2,23 @@
 <div class="container">
     <form [ngFormModel]="interviewForm" (submit)="createCandidate()">
         <div ngControlGroup="interview">
-            <div ngControlGroup="candidate">
+            <div ngControlGroup="candidate" class="form-group">
                 <div class="row">
                     <span class="col-md-5">Candidate First Name</span>
-                    <div class="col-md-6"><input name="candidateFirstName" class="form-group" ngControl="firstName">
-                    </div>
+                    <div class="col-md-6"><input name="candidateFirstName" class="form-control"
+                                                 ngControl="firstName"></div>
                 </div>
+                <br>
                 <div class="row">
                     <span class="col-md-5">Candidate Last Name</span>
-                    <div class="col-md-6"><input name="candidateLastName" class="form-group"
+                    <div class="col-md-6"><input name="candidateLastName" class="form-control"
                                                  ngControl="lastName"></div>
                 </div>
             </div>
             <div class="row">
-                <button type="submit" class="btn-primary col-md-offset-4 col-md-4">Create</button>
+                <button type="submit" class="btn-primary col-md-offset-4 col-md-4"
+                        [disabled]="!interviewForm.valid">Create
+                </button>
             </div>
         </div>
     </form>

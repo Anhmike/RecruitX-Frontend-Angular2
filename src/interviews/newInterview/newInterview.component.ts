@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Interview } from "../interviewDetails/interview.component";
-import {ControlGroup, FormBuilder} from "@angular/common";
+import {ControlGroup, FormBuilder, Validators} from "@angular/common";
 
 @Component({
     selector: 'newinterviewcreation',
@@ -14,8 +14,8 @@ export class NewInterview{
         this.interviewForm = fb.group({
             interview: fb.group({
                 candidate: fb.group({
-                    firstName: [''],
-                    lastName: ['']
+                    firstName: ['', Validators.required],
+                    lastName: ['', Validators.required]
                 })
             })
         })
