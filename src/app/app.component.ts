@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { NewInterview } from '../interviews/newInterview.component'
+import { Interviews } from '../interviews/interviews.component'
 
 @Component({
     selector: 'app',
@@ -9,6 +9,11 @@ import { NewInterview } from '../interviews/newInterview.component'
 })
 
 @Routes([
-    {path: '/interview/create', component: NewInterview }
+    {path: '/interviews', component: Interviews }
 ])
-export class AppComponent {}
+
+export class AppComponent {
+    onSubmit() {
+      
+    }
+}
