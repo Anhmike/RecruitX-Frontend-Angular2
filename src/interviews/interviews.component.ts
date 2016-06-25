@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
-import { NewInterview} from './newInterview/newInterview.component'
+import {Component, OnInit} from '@angular/core';
+import { HttpService } from './../service/httpService'
 import { ListInterview } from './listInterview/listInterview.component'
 
 @Component({
-    template: `<div>Interviews</div>
-    <router-outlet></router-outlet>`
+    selector: 'interviews',
+    template: `<interviewList [interviewList]=interviews></interviewList>`,
+    providers: [HttpService],
+    directives: [ListInterview]
 })
 
-@Routes([
-    {path: '/',      component: ListInterview },
-    {path: '/create',      component: NewInterview },
-])
+export class Interviews implements OnInit {
+    private interviews;
+    constructor(private httpService: HttpService) {
+    }
 
-export class Interviews{}
+    ngOnInit() {
+        this.httpService.getInterviews().subscribe(data => this.interviews = data);
+    }
+}

@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
+import {Component, Input} from '@angular/core';
+import { Interview } from "../interviewDetails/interview.component";
 
 @Component({
-    template: '<div>Interview List</div>'
+    selector: 'interviewList',
+    template: `<div>Interview List</div>
+               <div *ngFor="let interview of interviewList">
+               <interview [interview]="interview"></interview>
+               </div> `,
+    directives: [Interview]
 })
 
-export class ListInterview{}
+export class ListInterview{
+    @Input('interviewList') interviewList: Interview[];
+}
